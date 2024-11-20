@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 const saveBtn = document.getElementById("saveBtn");
 const tagInput = document.getElementById("tagInput");
 const tagList = document.getElementById("tagList");
@@ -32,10 +33,12 @@ function displayTags(notes) {
         let tempSpanText = note.tag.slice(0, 15);
         note.tag.length > 15 ? (tempSpanText += "...") : tempSpanText;
         pText.innerHTML = `Showing All the notes of &nbsp;"<span>${tempSpanText}</span>"&nbsp; tag`;
-
         chrome.storage.local.set({ selectedTag: note.tag }, () => {
-          console.log("Tag saved:", note.tag);
+          console.log("===============================");
+          console.info("Tag saved:", note.tag);
+          console.log("===============================");
         });
+        displayNotes(note)
       }
     });
     tagList.append(p);
@@ -46,21 +49,43 @@ function displayTags(notes) {
 chrome.storage.local.get(["notes", "selectedTag"], (result) => {
   let selectedTag = result.selectedTag;
   let pText = document.querySelector(".navbar p");
+  let noteObject = [];
   if (selectedTag) {
     let tempSpanText = selectedTag.slice(0, 15);
     selectedTag.length > 15 ? (tempSpanText += "...") : tempSpanText;
     pText.innerHTML = `Showing All the notes of &nbsp;"<span>${tempSpanText}</span>"&nbsp; tag`;
+    noteObject = result.notes.filter((note) => note.tag == selectedTag);
   } else {
-    pText.textContent = "Showing all the notes";
+      if(result.notes) {
+        pText.innerHTML = `Showing All the notes of &nbsp;"<span>${'General'}</span>"&nbsp; tag`;
+        noteObject = result.notes.filter((note) => note.tag == 'General');
+      } else {
+        pText.innerHTML = "No notes found."
+      }
   }
-  // let noteList = result.notes.filter((note) => note.tag === selectedTag);
   displayTags(result.notes || []);
+  displayNotes(noteObject.length > 0 ? noteObject[0] : null)
 });
 
-// chrome.storage.local.clear(() => {
-//   if (chrome.runtime.lastError) {
-//     console.error("Error clearing storage:", chrome.runtime.lastError);
-//   } else {
-//     console.log("Storage cleared successfully!");
-//   }
-// });
+function displayNotes(note) {
+  let notesHtml = document.querySelector(".notes")
+  notesHtml.innerHTML = '';
+  if(note) {
+    note?.plainList.forEach((ele, index) => {
+      let div = document.createElement('div')
+      div.classList.add('note')
+  
+      let p1 = document.createElement('p')
+      p1.textContent = index;
+  
+      let p2 = document.createElement('p')
+      p2.textContent = ele.slice(0,124) + "..."
+      
+      div.append(p1);
+      div.append(p2);
+      notesHtml.append(div);
+    })
+  }
+
+}
+});

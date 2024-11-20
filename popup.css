@@ -131,9 +131,10 @@ body{
     height: 100%;
     background-color: #D6C0B3;
     position: relative;
+    overflow-y: scroll;
 }
 .area .createNote {
-    position: absolute;
+    position: fixed;
     bottom: 3%;
     right: 3%;
     font-weight: bold;
@@ -153,11 +154,36 @@ body{
     flex-direction: column;
     width: 100%;
     padding:5px;
-    overflow: hidden;
+    overflow: visible;
+    gap: 5px;
 }
 .note {
-    background-color: green;
+    background-color: #835b41;
     border-bottom: 2px solid white;
     height: 2rem;
     width: 100%;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+.note > p:nth-child(1) {
+    width: 7%;
+    text-align: center;
+    font-size: 18px;
+    color: #D6C0B3;
+    height: 100%;
+    font-weight: 700;
+    border-right: 2px solid #D6C0B3;
+}
+.note > p:nth-child(2) {
+    width: 91%;
+    /* font-size: 18px; */
+    color: #D6C0B3;
+    height: 100%;
+    font-weight: 700;
 }
