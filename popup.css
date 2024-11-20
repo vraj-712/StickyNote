@@ -136,8 +136,8 @@ body{
 }
 .area .createNote {
     position: fixed;
-    bottom: 3%;
-    right: 3%;
+    bottom: 2%;
+    right: 4%;
     font-weight: bold;
     color: #D6C0B3;
     background: #493628;
