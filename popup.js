@@ -79,10 +79,15 @@ function displayNotes(note) {
       p1.textContent = index;
   
       let p2 = document.createElement('p')
-      p2.textContent = ele.slice(0,124) + "..."
+      p2.textContent = ele.slice(0,120) + "..."
       
       div.append(p1);
       div.append(p2);
+      div.addEventListener('click', () => {
+        window.location.href = `singlenote.html?tagname=${note.tag}&noteindex=${index}`
+      })
+
+
       notesHtml.append(div);
     })
   }

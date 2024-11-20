@@ -101,6 +101,7 @@ body{
 
 .workarea{
     display: flex;
+    width: 70%;
     flex-direction: column;
 }
 .navbar {
@@ -186,4 +187,5 @@ body{
     color: #D6C0B3;
     height: 100%;
     font-weight: 700;
+    word-break: break-all;
 }

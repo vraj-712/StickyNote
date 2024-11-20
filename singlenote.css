@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 800px;
+    height: 585.6px;
+}
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #D6C0B3;
+}
+.navbar {
+    width: 100%;
+    height: 10%;
+    border-bottom: 2px solid #493628;
+    position: relative;
+}
+.navbar > a {
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    transform: translate(-50%, -50%);
+    font-size: 27px; 
+    cursor: pointer;
+    text-decoration: none;
+    color: #493628;
+}
+.area {
+    width: 100%;
+    height: 90%;
+    position: relative;
+}
+.content {
+    overflow-y: scroll;
+    padding: 5px;
+    width: 96%;
+    position: absolute;
+    height: 96%;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    /* border: 3px solid #493628; */
+    border-radius: 7px;
+}
+/* For Hiding ScrollBar */
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #493628; 
+    border-radius: 10px;
+  }
