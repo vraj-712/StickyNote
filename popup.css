@@ -201,13 +201,22 @@ body{
     width: 7%;
     text-align: center;
     font-size: 18px;
+    height: 100%;
+    font-weight: 700;
+    border-right: 2px solid #D6C0B3;
+    
+}
+.note > p:nth-child(2) {
+    width: 7%;
+    text-align: center;
+    font-size: 18px;
     color: #D6C0B3;
     height: 100%;
     font-weight: 700;
     border-right: 2px solid #D6C0B3;
 }
-.note > p:nth-child(2) {
-    width: 91%;
+.note > p:nth-child(3) {
+    width: 86%;
     /* font-size: 18px; */
     color: #D6C0B3;
     height: 100%;

@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ],
         [{ list: "ordered" }, { list: "bullet" }, { list: "check" }],
         [{ header: [1, 2, 3, 4, 5, 6, false] }],
-        [{ blockquote: true }, { code: true }],
+        ["code-block"],
+        [{ blockquote: true }],
         [{ direction: "rtl" }],
         [{ color: [] }, { background: [] }],
         ["link"],
@@ -77,9 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
   createBtn.addEventListener('click', () => {
     const quillContent = quill.root.innerHTML;
     const quillPlainContent = quill.getText();
-    if(!quillContent) {
+    if(!quillContent || !quillPlainContent || quillContent == "" || quillPlainContent.trim() == "") {
       console.log("=======================================");
-      console.warn("In this tag there is no note");
+      console.warn("Can not add empty note");
       console.log("=======================================");
     } else {
         chrome.storage.local.get("notes", (result) => {

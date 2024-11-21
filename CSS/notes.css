@@ -69,7 +69,7 @@ body{
 }
 /* Quill Editor Css */
 .ql-editor *{
-    word-break: break-all;
+    /* word-break: break-all; */
 }
 .ql-toolbar.ql-snow {
     border: 3px solid #493628 !important;
@@ -80,10 +80,10 @@ body{
 .ql-editor {
     border: 3px solid #493628 !important;
 }
-.ql-editor * {
+/* .ql-editor * {
     word-break: break-all !important;
     line-break: anywhere !important;
-}
+} */
 
 ::-webkit-scrollbar {
     width: 7px;
@@ -106,3 +106,8 @@ body{
   ::-webkit-scrollbar-thumb:active {
     cursor:grabbing; 
   }
+  .ql-code-block { 
+
+    white-space: pre-wrap; 
+
+}
