@@ -193,6 +193,10 @@ body{
     align-items: center;
     padding: 5px;
 }
+.note:hover {
+    background-color: #462e1e;
+    cursor: pointer;
+}
 .note > p:nth-child(1) {
     width: 7%;
     text-align: center;
