@@ -51,7 +51,7 @@ body{
 /* For Hiding ScrollBar */
 /* width */
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 7px;
     border-radius: 10px;
   }
   
@@ -64,4 +64,10 @@ body{
   ::-webkit-scrollbar-thumb {
     background: #493628; 
     border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    cursor:grab; 
+  }
+  ::-webkit-scrollbar-thumb:active {
+    cursor:grabbing; 
   }

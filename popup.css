@@ -158,6 +158,27 @@ body{
     overflow: visible;
     gap: 5px;
 }
+::-webkit-scrollbar {
+    width: 7px;
+    border-radius: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #493628; 
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    cursor:grab; 
+  }
+  ::-webkit-scrollbar-thumb:active {
+    cursor:grabbing; 
+  }
 .note {
     background-color: #835b41;
     border-bottom: 2px solid white;

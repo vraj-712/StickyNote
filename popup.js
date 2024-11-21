@@ -84,7 +84,7 @@ function displayNotes(note) {
       div.append(p1);
       div.append(p2);
       div.addEventListener('click', () => {
-        window.location.href = `singlenote.html?tagname=${note.tag}&noteindex=${index}`
+        window.location.href = `../HTML/singlenote.html?tagname=${note.tag}&noteindex=${index}`
       })
 
 
