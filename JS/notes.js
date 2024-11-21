@@ -38,10 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!result.notes) {
       chrome.storage.local.set({ notes: [] }, () => {
-        console.log("=================================================================");
+        console.log(
+          "================================================================="
+        );
         console.info("Note has been created!!");
-        console.warn("Because User first time come and directly press create button !!")
-        console.log("=================================================================");
+        console.warn(
+          "Because User first time come and directly press create button !!"
+        );
+        console.log(
+          "================================================================="
+        );
       });
     } else {
       result.notes.forEach((note) => {
@@ -53,54 +59,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // if there is no any tag selected than general tag is addd to tag list
     if (!flag) {
-        chrome.storage.local.get({ notes: [] }, (result) => {
-          const updatedNotes = [...result.notes, { tag: tagName, list: [], plainList:[] }];
-          chrome.storage.local.set({ notes: updatedNotes }, () => {
-            let spanText = tagName.split(0, 15);
-            tagName.length > 15 ? (spanText += "...") : spanText;
-            navTitle.innerHTML = `This note is added to &nbsp;"<span>${spanText}</span>"&nbsp;`;
-          });
+      chrome.storage.local.get({ notes: [] }, (result) => {
+        const updatedNotes = [
+          ...result.notes,
+          { tag: tagName, list: [], plainList: [] },
+        ];
+        chrome.storage.local.set({ notes: updatedNotes }, () => {
+          let spanText = tagName.split(0, 15);
+          tagName.length > 15 ? (spanText += "...") : spanText;
+          navTitle.innerHTML = `This note is added to &nbsp;"<span>${spanText}</span>"&nbsp;`;
         });
-      } else {
-        let spanText = tagName.split(0, 15);
-        tagName.length > 15 ? (spanText += "...") : spanText;
-        navTitle.innerHTML = `This note is added to &nbsp;"<span>${spanText}</span>"&nbsp;`;
-      }
-
-      chrome.storage.local.set({ selectedTag: tagName }, () => {
-        console.log("===================================")
-        console.info("Tag saved:", tagName);
-        console.log("===================================")
       });
-  });
-  
+    } else {
+      let spanText = tagName.split(0, 15);
+      tagName.length > 15 ? (spanText += "...") : spanText;
+      navTitle.innerHTML = `This note is added to &nbsp;"<span>${spanText}</span>"&nbsp;`;
+    }
 
-  createBtn.addEventListener('click', () => {
+    chrome.storage.local.set({ selectedTag: tagName }, () => {
+      console.log("===================================");
+      console.info("Tag saved:", tagName);
+      console.log("===================================");
+    });
+  });
+
+  createBtn.addEventListener("click", () => {
     const quillContent = quill.root.innerHTML;
     const quillPlainContent = quill.getText();
-    if(!quillContent || !quillPlainContent || quillContent == "" || quillPlainContent.trim() == "") {
+    if (
+      !quillContent ||
+      !quillPlainContent ||
+      quillContent == "" ||
+      quillPlainContent.trim() == ""
+    ) {
       console.log("=======================================");
       console.warn("Can not add empty note");
       console.log("=======================================");
     } else {
-        chrome.storage.local.get("notes", (result) => {
-            const notes = [...result.notes]
-            notes.forEach((ele, index) => {
-                if (ele.tag == tagName){
-                    ele.list.push(quillContent);
-                    ele.plainList.push(quillPlainContent)
-                }
-            })
-            chrome.storage.local.set({notes:notes}, ()=>{
-                console.log("=======================================");
-                console.info("Note Added Successfully!!");
-                console.log("=======================================");
-            })
-            quill.root.innerHTML="";
-        })
-
+      chrome.storage.local.get("notes", (result) => {
+        const notes = [...result.notes];
+        notes.forEach((ele, index) => {
+          if (ele.tag == tagName) {
+            ele.list.push(quillContent);
+            ele.plainList.push(quillPlainContent);
+          }
+        });
+        chrome.storage.local.set({ notes: notes }, () => {
+          console.log("=======================================");
+          console.info("Note Added Successfully!!");
+          console.log("=======================================");
+        });
+        quill.root.innerHTML = "";
+      });
     }
-  })
-
-
+  });
 });

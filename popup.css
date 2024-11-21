@@ -1,225 +1,224 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-body{
-    width: 800px;
-    height: 585.6px;
+body {
+  width: 800px;
+  height: 585.6px;
 }
 .main {
-    background-color: '#DE4E0E1' ;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
+  background-color: "#DE4E0E1";
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
 }
 .sidebar {
-    width: 30%;
-    height: 100%;
-    background-color: #D6C0B3;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border-right: 3px solid #493628;
+  width: 30%;
+  height: 100%;
+  background-color: #d6c0b3;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-right: 3px solid #493628;
 }
 .workarea {
-    width: 70%;
-    height: 100%;
-    background-color: #D6C0B3;
+  width: 70%;
+  height: 100%;
+  background-color: #d6c0b3;
 }
 .tags {
-    width:100%;
-    height: 80%;
-    border: 3px solid #493628;
-    overflow: scroll;
-    border-radius: 10px;
-    padding: 5px;
+  width: 100%;
+  height: 80%;
+  border: 3px solid #493628;
+  overflow: scroll;
+  border-radius: 10px;
+  padding: 5px;
 }
 .tags > div {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    /* flex-direction: row; */
-    justify-content: start;
-    overflow: hidden;
-    gap: 3px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: row; */
+  justify-content: start;
+  overflow: hidden;
+  gap: 3px;
 }
 .tags > div > p {
-    background-color: #493628;
-    color: #D6C0B3;
-    font-weight: bold;
-    padding: 7px;
-    border-radius: 10px;
-    word-break: break-all;
+  background-color: #493628;
+  color: #d6c0b3;
+  font-weight: bold;
+  padding: 7px;
+  border-radius: 10px;
+  word-break: break-all;
 }
 .form {
-    width:100%;
-    height: 20%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 #tagInput {
-    width: 100%;
-    height: 70%;
-    padding: 10px;
-    font-size: 17px;
-    background-color: #E4E0E1;
-    border: 0px;
-    color: #493628;
-    font-weight: 600;
-    border-radius: 7px;
+  width: 100%;
+  height: 70%;
+  padding: 10px;
+  font-size: 17px;
+  background-color: #e4e0e1;
+  border: 0px;
+  color: #493628;
+  font-weight: 600;
+  border-radius: 7px;
 }
 #tagInput:focus {
-    outline: none;
+  outline: none;
 }
 #saveBtn {
-    width: 100%;
-    height: 30%;
-    background-color: #493628;
-    color: #D6C0B3;
-    font-size: 15px;
-    font-weight: bold;
-    border: 0px;
-    border-radius: 25px;
+  width: 100%;
+  height: 30%;
+  background-color: #493628;
+  color: #d6c0b3;
+  font-size: 15px;
+  font-weight: bold;
+  border: 0px;
+  border-radius: 25px;
 }
 #saveBtn:hover {
-    background-color: #462e1e;
+  background-color: #462e1e;
 }
 /* For Hiding ScrollBar */
 .no-scrollbar::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Work area CSS */
 
-.workarea{
-    display: flex;
-    width: 70%;
-    flex-direction: column;
+.workarea {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
 }
 .navbar {
-    width: 100%;
-    height: 10%;
-    background-color: #D6C0B3;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 10px;
-    border-bottom: 2px solid #493628;
-    overflow: hidden;
+  width: 100%;
+  height: 10%;
+  background-color: #d6c0b3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  border-bottom: 2px solid #493628;
+  overflow: hidden;
 }
 .navbar p {
-    font-size: 18px;
-    color: #493628;
-    font-weight: bold;
-    overflow: hidden;
+  font-size: 18px;
+  color: #493628;
+  font-weight: bold;
+  overflow: hidden;
 }
-.navbar p>span {
-    font-size: 20px;
-    font-weight: bolder;
-    overflow: hidden;
+.navbar p > span {
+  font-size: 20px;
+  font-weight: bolder;
+  overflow: hidden;
 }
 .area {
-    width: 100%;
-    height: 100%;
-    background-color: #D6C0B3;
-    position: relative;
-    overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  background-color: #d6c0b3;
+  position: relative;
+  overflow-y: scroll;
 }
 .area .createNote {
-    position: fixed;
-    bottom: 2%;
-    right: 4%;
-    font-weight: bold;
-    color: #D6C0B3;
-    background: #493628;
-    cursor: pointer;
-    padding: 7px 10px;
-    border-radius: 7px;
-    text-decoration: none;
+  position: fixed;
+  bottom: 2%;
+  right: 4%;
+  font-weight: bold;
+  color: #d6c0b3;
+  background: #493628;
+  cursor: pointer;
+  padding: 7px 10px;
+  border-radius: 7px;
+  text-decoration: none;
 }
 .createNote:hover {
-    background-color: #462e1e;
+  background-color: #462e1e;
 }
-.notes{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding:5px;
-    overflow: visible;
-    gap: 5px;
+.notes {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 5px;
+  overflow: visible;
+  gap: 5px;
 }
 ::-webkit-scrollbar {
-    width: 7px;
-    border-radius: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #493628; 
-    border-radius: 10px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    cursor:grab; 
-  }
-  ::-webkit-scrollbar-thumb:active {
-    cursor:grabbing; 
-  }
+  width: 7px;
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #493628;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  cursor: grab;
+}
+::-webkit-scrollbar-thumb:active {
+  cursor: grabbing;
+}
 .note {
-    background-color: #835b41;
-    border-bottom: 2px solid white;
-    height: 2rem;
-    width: 100%;
-    border-radius: 7px;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
+  background-color: #835b41;
+  border-bottom: 2px solid white;
+  height: 2rem;
+  width: 100%;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
 }
 .note:hover {
-    background-color: #462e1e;
-    cursor: pointer;
+  background-color: #462e1e;
+  cursor: pointer;
 }
 .note > p:nth-child(1) {
-    width: 7%;
-    text-align: center;
-    font-size: 18px;
-    height: 100%;
-    font-weight: 700;
-    border-right: 2px solid #D6C0B3;
-    
+  width: 7%;
+  text-align: center;
+  font-size: 18px;
+  height: 100%;
+  font-weight: 700;
+  border-right: 2px solid #d6c0b3;
 }
 .note > p:nth-child(2) {
-    width: 7%;
-    text-align: center;
-    font-size: 18px;
-    color: #D6C0B3;
-    height: 100%;
-    font-weight: 700;
-    border-right: 2px solid #D6C0B3;
+  width: 7%;
+  text-align: center;
+  font-size: 18px;
+  color: #d6c0b3;
+  height: 100%;
+  font-weight: 700;
+  border-right: 2px solid #d6c0b3;
 }
 .note > p:nth-child(3) {
-    width: 86%;
-    /* font-size: 18px; */
-    color: #D6C0B3;
-    height: 100%;
-    font-weight: 700;
-    word-break: break-all;
+  width: 86%;
+  /* font-size: 18px; */
+  color: #d6c0b3;
+  height: 100%;
+  font-weight: 700;
+  word-break: break-all;
 }
