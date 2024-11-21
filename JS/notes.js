@@ -38,16 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!result.notes) {
       chrome.storage.local.set({ notes: [] }, () => {
-        console.log(
-          "================================================================="
-        );
-        console.info("Note has been created!!");
-        console.warn(
-          "Because User first time come and directly press create button !!"
-        );
-        console.log(
-          "================================================================="
-        );
+        sendNotification("FirstTime", "Welcome !!", "This is your first time !! so it directly added to general tag", "../icon48.png");
       });
     } else {
       result.notes.forEach((note) => {
@@ -92,9 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
       quillContent == "" ||
       quillPlainContent.trim() == ""
     ) {
-      console.log("=======================================");
-      console.warn("Can not add empty note");
-      console.log("=======================================");
+      sendNotification("warning", "Warning !!", "Note can't be empty !!", "../icon48.png");
     } else {
       chrome.storage.local.get("notes", (result) => {
         const notes = [...result.notes];
@@ -105,9 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
         chrome.storage.local.set({ notes: notes }, () => {
-          console.log("=======================================");
-          console.info("Note Added Successfully!!");
-          console.log("=======================================");
+          sendNotification("Note Add", "Note Added", "Note has been added successfully !!", "../icon48.png");
         });
         quill.root.innerHTML = "";
       });

@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
               }
             });
             chrome.storage.local.set({ notes: updatedNotes }, () => {
-              console.log("Notes Deleted SuccessFully");
+              sendNotification("Delete Note", "Note Deletion", "note deleted successfully !!");
             });
             chrome.storage.local.get(["notes"], (result) => {
               let tempArr = result.notes.filter(
