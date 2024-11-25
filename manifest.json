@@ -1,6 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Notes Extension",
+  "name": "Sticky Notes",
+  "description": "This is simple and user friendly note taking app for you daily purposes. So that you can keep your notes in one place.",
   "version": "1.0",
   "permissions": ["storage", "notifications", "contextMenus"],
   "action": {
