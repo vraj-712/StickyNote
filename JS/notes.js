@@ -56,13 +56,13 @@ document.addEventListener("DOMContentLoaded", () => {
           { tag: tagName, list: [], plainList: [] },
         ];
         chrome.storage.local.set({ notes: updatedNotes }, () => {
-          let spanText = tagName.split(0, 15);
+          let spanText = tagName.slice(0,5);
           tagName.length > 15 ? (spanText += "...") : spanText;
           navTitle.innerHTML = `This note is added to &nbsp;"<span>${spanText}</span>"&nbsp;`;
         });
       });
     } else {
-      let spanText = tagName.split(0, 15);
+      let spanText = tagName.slice(0, 15);
       tagName.length > 15 ? (spanText += "...") : spanText;
       navTitle.innerHTML = `This note is added to &nbsp;"<span>${spanText}</span>"&nbsp;`;
     }
