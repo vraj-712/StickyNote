@@ -29,6 +29,7 @@ body {
   cursor: pointer;
   text-decoration: none;
   color: #493628;
+  width: 80%;;
 }
 .navbar > p {
   position: absolute;
