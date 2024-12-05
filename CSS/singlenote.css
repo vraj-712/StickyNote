@@ -14,12 +14,14 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #d6c0b3;
+  position: relative;
 }
 .navbar {
   width: 100%;
   height: 10%;
   border-bottom: 2px solid #493628;
-  position: relative;
+  position: absolute;
+  top: 0;
 }
 .navbar > a {
   position: absolute;
@@ -31,10 +33,22 @@ body {
   text-decoration: none;
   color: #493628;
 }
+.navbar > p {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  transform: translate(-50%, -50%);
+  font-size: 27px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #493628;
+}
 .area {
   width: 100%;
   height: 90%;
-  position: relative;
+  position: absolute;
+  top: 10%;
+  background-color: #d6c0b3;
 }
 .content {
   overflow-y: scroll;
@@ -45,11 +59,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* border: 3px solid #493628; */
+
+  
   border-radius: 7px;
 }
-/* For Hiding ScrollBar */
-/* width */
 ::-webkit-scrollbar {
   width: 7px;
   border-radius: 10px;
