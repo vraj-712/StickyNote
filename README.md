@@ -6,7 +6,7 @@ A lightweight and user-friendly Chrome extension that helps you create, manage, 
 
 - 📝 **Create Sticky Notes**: Easily create sticky notes directly in your browser.
 - 📌 **Persistent Notes**: Notes are saved and remain visible across tabs.
-- 🎨 **Customizable Design**: Resize and reposition notes on the screen.
+- 🎨 **Design**: Simple and user-friendly design
 - 💾 **Local Storage**: All your notes are saved securely in your browser's local storage.
 - 🗑️ **Delete Notes**: Remove sticky notes when they're no longer needed.
 
