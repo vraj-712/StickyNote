@@ -5,4 +5,7 @@ function sendNotification( notiName, title, message, iconUrl = "icon48.png") {
         title: title,
         message: message,
     });
+    setTimeout(() => {
+        chrome.notifications.clear(notiName);
+    }, 500);
 }
